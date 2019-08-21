@@ -258,10 +258,6 @@ designer/out/
 .idea/
 build/
 
-# dynamically generated resources
-gateway/src/main/resources/mounted/js/RadComponents.js
-gateway/src/main/resources/mounted/js/RadDesignComponents.js
-
 
 # web subproject ignores
 web/node_modules/
@@ -281,3 +277,7 @@ Ignition-Build/
 
 private/
 sign.props
+
+# dynamically generated resources
+gateway/src/main/resources/mounted/MuiComponents.css
+gateway/src/main/resources/mounted/MuiComponents.js
