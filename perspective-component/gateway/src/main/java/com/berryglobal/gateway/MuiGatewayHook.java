@@ -12,6 +12,7 @@ import com.inductiveautomation.perspective.gateway.api.ComponentModelDelegateReg
 import com.inductiveautomation.perspective.gateway.api.PerspectiveContext;
 import com.berryglobal.common.MuiComponents;
 import com.berryglobal.common.component.input.TextField;
+import com.berryglobal.common.component.container.ThemeProvider;
 
 public class MuiGatewayHook extends AbstractGatewayModuleHook {
 
@@ -39,6 +40,7 @@ public class MuiGatewayHook extends AbstractGatewayModuleHook {
         if (this.componentRegistry != null) {
             log.info("Registering Mui components.");
             this.componentRegistry.registerComponent(TextField.DESCRIPTOR);
+            this.componentRegistry.registerComponent(ThemeProvider.DESCRIPTOR);
         } else {
             log.error("Reference to component registry not found, Mui Components will fail to function!");
         }

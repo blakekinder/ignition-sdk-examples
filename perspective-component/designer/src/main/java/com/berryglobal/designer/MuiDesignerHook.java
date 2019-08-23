@@ -8,6 +8,7 @@ import com.inductiveautomation.ignition.designer.model.DesignerContext;
 import com.inductiveautomation.perspective.designer.DesignerComponentRegistry;
 import com.inductiveautomation.perspective.designer.api.PerspectiveDesignerInterface;
 import com.berryglobal.common.component.input.TextField;
+import com.berryglobal.common.component.container.ThemeProvider;
 
 /**
  * The 'hook' class for the designer scope of the module. Registered in the
@@ -43,6 +44,7 @@ public class MuiDesignerHook extends AbstractDesignerModuleHook {
 
         // register components to get them on the palette
         registry.registerComponent(TextField.DESCRIPTOR);
+        registry.registerComponent(ThemeProvider.DESCRIPTOR);
     }
 
     @Override
@@ -52,5 +54,6 @@ public class MuiDesignerHook extends AbstractDesignerModuleHook {
 
     private void removeComponents() {
         registry.removeComponent(TextField.COMPONENT_ID);
+        registry.removeComponent(ThemeProvider.COMPONENT_ID);
     }
 }

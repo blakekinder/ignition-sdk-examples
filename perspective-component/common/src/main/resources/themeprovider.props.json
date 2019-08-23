@@ -1,0 +1,62 @@
+{
+	"type": "object",
+	"properties": {
+		"direction": {
+			"default": "row",
+			"description": "Direction of child layout.",
+			"enum": ["row", "row-reverse", "column-reverse", "column"],
+			"required": true,
+			"type": "string"
+		},
+		"wrap": {
+			"default": "nowrap",
+			"description": "Whether the container should allow children to wrap to the next line if space has run out.",
+			"enum": ["nowrap", "wrap-reverse", "wrap"],
+			"required": true,
+			"type": "string"
+		},
+		"justify": {
+			"default": "flex-start",
+			"enum": [
+				"flex-start",
+				"space-between",
+				"space-around",
+				"flex-end",
+				"center"
+			],
+			"required": true,
+			"type": "string"
+		},
+		"alignItems": {
+			"default": "stretch",
+			"enum": ["stretch", "flex-start", "flex-end", "center", "baseline"],
+			"required": true,
+			"type": "string"
+		},
+		"alignContent": {
+			"default": "stretch",
+			"enum": [
+				"stretch",
+				"space-between",
+				"space-around",
+				"flex-start",
+				"flex-end",
+				"center"
+			],
+			"required": true,
+			"type": "string"
+		},
+		"style": {
+			"$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+			"default": {
+				"classes": "",
+				"overflow": "auto"
+			}
+		},
+		"theme": {
+			"type": "object",
+			"description": "A theme object used to set/override the theme on MUI components. Reference `https://material-ui.com/customization/theming/` for setup.",
+			"default": { "palette": { "type": "light" } }
+		}
+	}
+}

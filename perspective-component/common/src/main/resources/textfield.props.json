@@ -1,6 +1,12 @@
 {
 	"type": "object",
 	"properties": {
+		"style": {
+			"$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+			"default": {
+				"classes": ""
+			}
+		},
 		"autoComplete": {
 			"type": "string",
 			"description": "Helps users to fill forms faster. You can learn more about it at https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill",
@@ -24,7 +30,7 @@
 		"fullWidth": {
 			"type": "boolean",
 			"description": "If true, the input will take up the full width of its container.",
-			"default": false
+			"default": true
 		},
 		"label": {
 			"type": "string",
@@ -34,7 +40,8 @@
 		"margin": {
 			"type": "string",
 			"description": "If dense or normal, will adjust vertical spacing of this and contained components.",
-			"default": "normal"
+			"default": "normal",
+			"enum": ["none", "dense", "normal"]
 		},
 		"multiline": {
 			"type": "boolean",
@@ -61,10 +68,29 @@
 			"description": "Maximum number of rows to display when multiline option is set to true.",
 			"default": 1
 		},
+		"theme": {
+			"type": "string",
+			"description": "Sets the theme palette.",
+			"default": "light",
+			"enum": ["light", "dark"]
+		},
 		"type": {
 			"type": "string",
 			"description": "Type of the input element. It should be a valid HTML5 input type.",
-			"default": "text"
+			"default": "text",
+			"enum": [
+				"date",
+				"datetime-local",
+				"email",
+				"file",
+				"number",
+				"password",
+				"search",
+				"tel",
+				"text",
+				"time",
+				"url"
+			]
 		},
 		"value": {
 			"type": "string",
@@ -74,7 +100,8 @@
 		"variant": {
 			"type": "string",
 			"description": "The variant to use.",
-			"default": "standard"
+			"default": "outlined",
+			"enum": ["standard", "outlined", "filled"]
 		}
 	}
 }
